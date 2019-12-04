@@ -1,0 +1,14 @@
+image:
+  - Visual Studio 2019
+
+clone_folder: c:\projects\interview_prep
+
+before_build:
+  - cd c:\projects\interview_prep
+  - mkdir build
+  - cd build
+  - cmake ..\
+
+build_script:
+  - cmake --build .\
+  - ctest -C Debug
