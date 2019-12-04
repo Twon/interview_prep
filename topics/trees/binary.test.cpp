@@ -20,9 +20,9 @@ TEST_CASE("Example test", "[example]")
             {
                 REQUIRE(levels.size() == 4);
                 REQUIRE(levels[0] == vector{5});
-                REQUIRE(levels[0] == vector{2, 8});
-                REQUIRE(levels[0] == vector{1, 3, 6, 9});
-                REQUIRE(levels[0] == vector{4, 7, 10});
+                REQUIRE(levels[1] == vector{2, 8});
+                REQUIRE(levels[2] == vector{1, 3, 6, 9});
+                REQUIRE(levels[3] == vector{4, 7, 10});
             }
         }
         WHEN("Performing using recusive iterations")
