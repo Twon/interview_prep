@@ -19,6 +19,6 @@
 [language]: https://en.wikipedia.org/wiki/C%2B%2B20
 [license]: https://en.wikipedia.org/wiki/MIT_License
 [issues]: http://github.com/twon/interview_prep/issues
-[codecov]: https://codecov.io/gh/twon/morpheus
+[codecov]: https://codecov.io/gh/twon/interview_prep
 
 A project containing solutions for common programming interview questions
