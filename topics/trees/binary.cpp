@@ -29,7 +29,7 @@ bool is_binary_search_tree(binary_node* tree, int min, int max)
     if (!tree)
         return true;
 
-    return (tree->data > min and tree->data < max) &&
+    return (tree->data > min && tree->data < max) &&
             is_binary_search_tree(tree->left, min, tree->data) &&
             is_binary_search_tree(tree->right, tree->data, max);
 }
