@@ -30,6 +30,8 @@ target_include_directories(interview_prep
 
 target_sources(interview_prep
     PRIVATE
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/sites/codility/prefix_sums/min_avg_two_slice.hpp>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/sites/codility/prefix_sums/min_avg_two_slice.cpp>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/topics/trees/binary.hpp>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/topics/trees/binary.cpp>
 )
@@ -53,6 +55,7 @@ endif()
 add_executable(test_interview_prep "")
 target_sources(test_interview_prep
     PRIVATE
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/sites/codility/prefix_sums/min_avg_two_slice.test.cpp>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/topics/trees/binary.test.cpp>
 )
 
