@@ -5,6 +5,13 @@
 
 using namespace std;
 
+const auto unordered_create_binary_tree()
+{
+    vector input = {1,2,3,4,5,6,7,8,9,10};
+    reverse(input.begin(), input.end());
+    return sorted_array_to_bst(input,0, static_cast<int>(input.size())-1);
+}
+
 TEST_CASE("Example test", "[example]")
 {
     GIVEN("A binary search tree created from a list of 1 - 10")
@@ -13,6 +20,17 @@ TEST_CASE("Example test", "[example]")
         binary_node* tree = create_binary_search_tree(inputs);
         //print_tree(tree, cout);
 
+
+        WHEN("First prove detecting an invalid binary tree works")
+        {
+            auto unordered_binary_tree = unordered_create_binary_tree();
+            REQUIRE(!is_binary_search_tree(unordered_binary_tree));
+
+            THEN("Once falsified then demonstrate it works on a binary search tree")
+            {
+                REQUIRE(is_binary_search_tree(tree));
+            }
+        }
         WHEN("Performing a breadth first search")
         {
             const auto levels = breadth_first_iterative(tree);

@@ -24,6 +24,16 @@ void destroy_binary_tree(binary_node*& tree)
     tree = nullptr;
 }
 
+bool is_binary_search_tree(binary_node* tree, int min, int max)
+{
+    if (!tree)
+        return true;
+
+    return (tree->data > min && tree->data < max) &&
+            is_binary_search_tree(tree->left, min, tree->data) &&
+            is_binary_search_tree(tree->right, tree->data, max);
+}
+
 binary_node* sorted_array_to_bst(const std::vector<int>& input, int start, int end)
 {
     if (start > end)
