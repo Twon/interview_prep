@@ -1,6 +1,8 @@
 #include <catch2/catch.hpp>
 #include <sites/codility/prefix_sums/min_avg_two_slice.hpp>
 #include <random>
+#include <iterator>
+#include <algorithm>
 
 using namespace std;
 

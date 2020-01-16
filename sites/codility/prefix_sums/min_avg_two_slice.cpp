@@ -70,7 +70,7 @@ int min_avg_two_slice_reference(std::vector<int> &A)
     auto min_idx = 0;
     auto min_value = 10001.0;
 
-    for (int idx = 2; idx < static_cast<int>(A.size()-1); ++idx)
+    for (int idx = 0; idx < static_cast<int>(A.size()-1); ++idx)
     {
         if ((A[idx] + A[idx + 1])/2.0 < min_value)
         {
