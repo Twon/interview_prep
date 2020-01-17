@@ -7,8 +7,8 @@ before_build:
   - cd c:\projects\interview_prep
   - mkdir build
   - cd build
-  - cmake ..\ -DCMAKE_BUILD_TYPE=Release
+  - cmake ..\
 
 build_script:
-  - cmake --build .\
+  - cmake --build .\ --config Release
   - ctest -C Release
