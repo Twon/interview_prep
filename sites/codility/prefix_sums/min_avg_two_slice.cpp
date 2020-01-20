@@ -1,7 +1,3 @@
-//
-// Created by Antony Peacock on 16/01/2020.
-//
-
 #include "min_avg_two_slice.hpp"
 
 
