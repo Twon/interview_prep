@@ -89,32 +89,13 @@ int print_num_zero_sub_arrays(vector<int> &A)
 //    return count;
 }
 
-/*!
+/*! For sub arrays with any other previous points with the same partial sum, as the sub array between that point
+    and the current point must total zero for it to have the same value.
+
     O(n)
  */
 int num_zero_sub_arrays(vector<int> &A)
 {
-/*    int count = 0;
-
-    // We store a map for each unique partial sum of the possible indices with this partial sum.
-    unordered_map<int, int> sum_indices = { {0, 1}};
-    vector<int> partial(A.size()+1 );
-    partial_sum(
-        A.begin(),
-        A.end(),
-        next(partial.begin()),
-        [&count, &sum_indices](auto lhs, auto rhs)
-        {
-            lhs += rhs;
-            auto& sum = sum_indices[lhs];
-            count += sum;
-            sum++;
-            return lhs;
-        }
-    );
-    return count;*/
-
-
     int count = 0;
     auto sum = 0;
     // Start with an implicit sum of zero before we start calculating the partial sum.
@@ -122,13 +103,6 @@ int num_zero_sub_arrays(vector<int> &A)
     for (int i = 0; i < static_cast<int>(A.size()); ++i)
     {
         sum+=A[i];
-
-        // Any sum of is a sub array of from the start to i
-        /*if (sum == 0)
-        {
-            count++;
-            //zero_subarrays.push_back(make_pair(0, i));
-        }*/
 
         const auto prev_sums = sum_indices.find(sum);
         if (prev_sums != sum_indices.end())
